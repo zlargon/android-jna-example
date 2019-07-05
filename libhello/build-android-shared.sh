@@ -62,8 +62,8 @@ do
     # cmake build
     ${CMAKE} --build "${ABI}"
 
-    # copy output to dist
-    dist=../dist/${ABI}
+    # install output shared library to jniLibs
+    dist=${root}/../hellosdk/src/main/jniLibs/${ABI}
     mkdir -p ${dist}
     cp ${ABI}/out/*.so ${dist}
 done
