@@ -62,8 +62,13 @@ do
     # cmake build
     ${CMAKE} --build "${ABI}"
 
+    # move to dist
+    mkdir -p ${root}/dist/${ABI}
+    mv ${ABI}/out/*.so ${root}/dist/${ABI}
+
     # install output shared library to jniLibs
-    dist=${root}/../hellosdk/src/main/jniLibs/${ABI}
-    mkdir -p ${dist}
-    cp ${ABI}/out/*.so ${dist}
+    cp ${root}/dist/${ABI}/libhello.so ${root}/../hellosdk/src/main/jniLibs/${ABI}
 done
+
+# remove build folder
+rm -rf ${root}/build
