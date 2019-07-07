@@ -10,9 +10,9 @@ project(
 set(CMAKE_POSITION_INDEPENDENT_CODE TRUE)
 
 add_library(
-    hello           # create a target as a library
-    SHARED          # Shared library
-    hello.c         # c sources
+    hello               # create a target as a library
+    # SHARED/STATIC     # ignore library type because it will be decided by 'BUILD_SHARED_LIBS'
+    hello.c             # c sources
 )
 
 target_link_libraries(

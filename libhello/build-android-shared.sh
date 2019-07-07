@@ -50,6 +50,7 @@ do
 
     # cmake generate ninja project
     ${CMAKE} -H".." -B"${ABI}" -G"Ninja"        \
+        -DBUILD_SHARED_LIBS="ON"                \
         -DANDROID_ABI="${ABI}"                  \
         -DANDROID_NDK=${ANDROID_NDK_ROOT}       \
         -DCMAKE_LIBRARY_OUTPUT_DIRECTORY="out"  \
