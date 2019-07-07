@@ -68,7 +68,9 @@ do
     mv ${ABI}/out/*.so ${root}/dist/${ABI}
 
     # install output shared library to jniLibs
-    cp ${root}/dist/${ABI}/libhello.so ${root}/../hellosdk/src/main/jniLibs/${ABI}
+    dist=${root}/../hellosdk/src/main/jniLibs/${ABI}
+    mkdir -p ${dist}
+    cp ${root}/dist/${ABI}/libhello.so ${dist}
 done
 
 # remove build folder
